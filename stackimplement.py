@@ -1,23 +1,34 @@
-
-'''
-covert time in 12hr format
-time=21:59:60
-10:00:00
-'''
-time='21:59:60'
-time=time.split(':')
-hrs=time[0]
-min=time[1]
-sec=time[2]
-if int(hrs)>12:
-    hrs=int(hrs)-12
-if int(min)>59:
-    hrs=int(hrs)+1
-    min=int(min)-60
-if int(sec)>59:
-    min=int(min)+1
-    sec=int(sec)-60
-print(str(hrs)+':'+str(min)+':'+str(sec))
-    
-
-
+class StackExample:
+    def _init_(self):
+        self.stack=[]
+    def push(self,data):
+        self.stack.append(data)
+    def is_empty(self):
+        return self.stack==[]
+    def pop(self):
+        if self.is_empty():
+            print('Stack Underflow')
+        else:
+            return self.stack.pop()
+    def peek(self):
+        if self.is_empty():
+            print('Stack is Empty')
+        else:
+            print(self.stack[-1])
+    def display(self):
+        if self.is_empty():
+            print('Stack is Empty')
+        else:
+            for top in range(len(self.stack)-1,-1,-1):
+                print(self.stack[top])
+obj=StackExample()
+obj.push(10)
+obj.push('hi')
+obj.push(30.0)
+obj.peek()
+obj.display()
+obj.pop()
+obj.pop()
+obj.display()
+obj.pop()
+obj.pop()

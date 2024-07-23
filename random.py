@@ -1,23 +1,22 @@
+#generate random no7.btween 1-10
 
 '''
-covert time in 12hr format
-time=21:59:60
-10:00:00
+import random
+ran=random.randint(1,10)#8
+print(ran)
 '''
-time='21:59:60'
-time=time.split(':')
-hrs=time[0]
-min=time[1]
-sec=time[2]
-if int(hrs)>12:
-    hrs=int(hrs)-12
-if int(min)>59:
-    hrs=int(hrs)+1
-    min=int(min)-60
-if int(sec)>59:
-    min=int(min)+1
-    sec=int(sec)-60
-print(str(hrs)+':'+str(min)+':'+str(sec))
+import random
+ran=random.randint(1,10)
+chances=1
+while chances<=3:
+    guess=int(input('Enter the number'))
+    ran=guess
+    if guess==ran:
+        print('congrats')
+        break
+    else:
+        chances+=1
+        continue
+if chances>3:
+    print('Failed try next time')
     
-
-
